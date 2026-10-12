@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CampusMart | Student Supplies Ordering System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-inner">
+      <a class="brand" href="#"><span class="logo">C</span> CampusMart</a>
+      <div class="nav-right">
+        <span class="nav-note">School supplies near campus</span>
+        <span class="cart-pill">🛒 <strong id="nav-count">0</strong> items</span>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <h1>Everything you need for class, <span>ready in a click.</span></h1>
+      <p>Choose your supplies, pay in cash, and get your digital receipt instantly.</p>
+    </div>
+  </section>
+
+  <main>
+    <!-- Product List -->
+    <section id="product-section" class="card">
+      <div class="card-head">
+        <h2>Product List</h2>
+        <span class="badge">6 products</span>
+      </div>
+      <div id="product-list" class="product-grid"></div>
+    </section>
+
+    <aside class="right-col">
+      <!-- Shopping Cart -->
+      <section id="cart-section" class="card">
+        <div class="card-head"><h2>Shopping Cart</h2></div>
+        <p id="empty-cart" class="muted empty">Your cart is empty. Add a product to start.</p>
+        <table id="cart-table" hidden>
+          <thead>
+            <tr><th>Item</th><th>Price</th><th>Qty</th><th>Subtotal</th><th></th></tr>
+          </thead>
+          <tbody id="cart-body"></tbody>
+        </table>
+      </section>
+
+      <!-- Order Summary -->
+      <section id="summary-section" class="card">
+        <div class="card-head"><h2>Order Summary</h2></div>
+        <div class="row"><span>Items</span><span id="summary-items">0</span></div>
+        <div class="row total"><span>Total Amount</span><span id="summary-total">₱0.00</span></div>
+      </section>
+
+      <!-- Payment -->
+      <section id="payment-section" class="card">
+        <div class="card-head"><h2>Payment</h2></div>
+        <label for="amount-paid">Amount paid (cash)</label>
+        <div class="input-wrap">
+          <span>₱</span>
+          <input type="text" id="amount-paid" inputmode="decimal" placeholder="0.00" autocomplete="off">
+        </div>
+        <button id="confirm-btn" class="primary">Confirm Payment</button>
+        <p id="error-msg" class="error" role="alert"></p>
+      </section>
+    </aside>
+  </main>
+
+  <!-- Receipt (modal) -->
+  <section id="receipt-section" hidden>
+    <div class="modal-card">
+      <div class="check">✓</div>
+      <h2>Receipt</h2>
+      <div id="receipt"></div>
+      <button id="new-btn" class="primary">New Transaction</button>
+    </div>
+  </section>
+
+  <footer>
+    <p>CampusMart · IT415 Midterm Practical Examination · Student Supplies Ordering System</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
